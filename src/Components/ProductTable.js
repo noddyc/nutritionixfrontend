@@ -17,7 +17,7 @@ const ProductTable = (props) => {
         });
         let config = {
           method: 'get',
-          url: 'http://18.215.172.154:8087/fetchAll',
+          url: 'http://54.145.20.136/fetchAll',
           headers: { },
           data : data
         };
