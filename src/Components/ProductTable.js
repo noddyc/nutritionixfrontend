@@ -17,7 +17,7 @@ const ProductTable = (props) => {
         });
         let config = {
           method: 'get',
-          url: 'http://18.215.172.154:8086/fetchAll',
+          url: 'http://18.215.172.154:8087/fetchAll',
           headers: { },
           data : data
         };
@@ -25,6 +25,7 @@ const ProductTable = (props) => {
         axios(config)
         .then((response) => {
           setMOCK_DATA(response.data);
+          console.log(MOCK_DATA)
         })
         .catch((error) => {
           console.log(error);

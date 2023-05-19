@@ -2,9 +2,9 @@ import _ from 'lodash'
 
 export const COLUMNS = [
   {
-    Header: 'fdcId',
-    Footer: 'fdcId',
-    accessor: 'fdcid',
+    Header: 'upc',
+    Footer: 'upc',
+    accessor: 'upc',
     // disableFilters: true,
     // disableSortBy: true,
     sticky: 'left',
@@ -15,23 +15,31 @@ export const COLUMNS = [
     accessor: 'description',
     sticky: 'left',
     Cell: (row)=>{
-      if(row.value.length > 20){
-        return _.startCase(_.lowerCase(row.value)).substring(0,30)+"..."
+      if(row.value){
+        if(row.value.length > 20){
+          return _.startCase(_.lowerCase(row.value)).substring(0,30)+"..."
+        }else{
+          return _.startCase(_.lowerCase(row.value))
+        }
       }else{
-        return _.startCase(_.lowerCase(row.value))
+        return "-"
       }
     }
   },
   {
-    Header: 'Brand Name',
-    Footer: 'Brand Name',
-    accessor: 'brand',
+    Header: 'Product Name',
+    Footer: 'Product Name',
+    accessor: 'name',
     sticky: 'left',
     Cell: (row)=>{
-      if(row.value.length > 10){
-        return _.startCase(_.lowerCase(row.value)).substring(0,30)+"..."
+      if(row.value){
+        if(row.value.length > 10){
+          return _.startCase(_.lowerCase(row.value)).substring(0,30)+"..."
+        }else{
+          return _.startCase(_.lowerCase(row.value))
+        }
       }else{
-        return _.startCase(_.lowerCase(row.value))
+        return "-"
       }
     }
   },
